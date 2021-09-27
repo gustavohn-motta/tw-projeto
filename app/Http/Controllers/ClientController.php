@@ -16,8 +16,12 @@ class ClientController extends Controller
         ]);
     }
     
-    public function create()
-    {
-        return view('clients.create');
+    public function show(int $id){
+
+        $client  = client::find($id);
+        
+        return view('clients.show',[
+            'client' => $client
+        ]);
     }
 }
