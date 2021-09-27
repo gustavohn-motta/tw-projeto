@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [SiteController::class, 'Index']);
+Route::get('/', [SiteController::class, 'Index'])->name('home');
 
 Route::get('/Sobre', [SiteController::class, 'Sobre']);
 
@@ -32,4 +32,5 @@ Route::get('/Servico/{id}', [SiteController::class, 'Servico']);
 
 Route::get('/Saudacao/{nome}', Saudacao::class);
 
-Route::get('/clients', [ClientController::class, 'index']);
+Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
+Route::get('/clients/{id}', [ClientController::class, 'show'])->name('clients.show');
